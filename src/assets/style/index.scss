@@ -1,0 +1,29 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+#root{
+    height: 100%;
+}
+.ant-app{
+    height: 100%;
+}
+ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color:black
+}
+
+.card {
+    height: 100%;
+    box-shadow: 0 0 12px #0000000d !important;
+    background-color: #fff !important;
+    border-color: #e4e7ed !important;
+    border-radius: 2px;
+    padding: 20px;
+}
