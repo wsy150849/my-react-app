@@ -1,7 +1,12 @@
 import Headertime from './components/DataHeaderTime'
 import './index.scss'
+import dataScreenTitle from "./images/dataScreen-title.png";
 import TiandituMap from '../tiandituMap'
 import { useRef, useLayoutEffect } from 'react'
+import RealTimeAccessChart from "./components/RealTimeAccessChart";
+import MaleFemaleRatioChart from "./components/MaleFemaleRatioChart";
+import AgeRatioChart from "./components/AgeRatioChart";
+// import ChinaMapChart from "./components/ChinaMapChart";
 const DataScreen = () => {
   const dataScreenRef = useRef(null)
   /* 浏览器监听 resize 事件 */
@@ -33,7 +38,7 @@ const DataScreen = () => {
 
   return (
     <div className="dataScreen" ref={dataScreenRef}>
-      <TiandituMap />
+      <TiandituMap a={1} onScale={getScale} />
       <div className="dataScreen-header">
         <div className="header-lf">
           <span className="header-screening">
@@ -51,8 +56,47 @@ const DataScreen = () => {
           <Headertime />
         </div>
       </div>
-      <div className='dataScreen-main'></div>
-    </div>
+      <div className="dataScreen-lf">
+        <div className="dataScreen-top">
+          <div className="dataScreen-main-title">
+            <span>实时游客统计</span>
+            <img src={dataScreenTitle} alt="" />
+          </div>
+          <div className="dataScreen-main-chart">
+            <RealTimeAccessChart />
+          </div>
+        </div>
+        <div className="dataScreen-center">
+          <div className="dataScreen-main-title">
+            <span>男女比例</span>
+            <img src={dataScreenTitle} alt="" />
+          </div>
+          <div className="dataScreen-main-chart">
+            <MaleFemaleRatioChart />
+          </div>
+        </div>
+        <div className="dataScreen-bottom">
+          <div className="dataScreen-main-title">
+            <span>年龄比例</span>
+            <img src={dataScreenTitle} alt="" />
+          </div>
+          <div className="dataScreen-main-chart">
+            <AgeRatioChart />
+          </div>
+        </div>
+      </div>
+      <div className="dataScreen-rg">
+        <div className="dataScreen-top">
+          <div className="dataScreen-main-title">
+            <span>热门景区排行</span>
+            <img src={dataScreenTitle} alt="" />
+          </div>
+          <div className="dataScreen-main-chart">
+            {/* <ChinaMapChart /> */}
+          </div>
+        </div>
+      </div>
+    </div >
   )
 }
 export default DataScreen

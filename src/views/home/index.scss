@@ -20,12 +20,12 @@
         box-shadow: 0 0 5px rgba(0, 0, 0, 1);
         background-size: cover;
         background-position: center;
-        -webkit-animation-name: "loops";
-        -webkit-animation-duration: 20s;
-        -webkit-animation-iteration-count: infinite;
+        animation-name: "loops";
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
     }
 
-    @-webkit-keyframes loops {
+    @keyframes loops {
         0% {
             background: url(http://d.hiphotos.baidu.com/image/w%3D400/sign=c01e6adca964034f0fcdc3069fc27980/e824b899a9014c08e5e38ca4087b02087af4f4d3.jpg) no-repeat;
         }

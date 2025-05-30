@@ -6,7 +6,7 @@ const LayoutIndex = lazy(() => import("@/layouts/index"));
 
 const dataScreenRoutes = [
   {
-    element: <LayoutIndex />,
+    // element: <LayoutIndex />,
     // children: [
     //   {
         path: "/dataScreen/index",
