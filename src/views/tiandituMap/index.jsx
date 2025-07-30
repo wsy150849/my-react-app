@@ -2,8 +2,8 @@ import React, { forwardRef, useEffect, useRef } from 'react';
 import './index.scss';
 
 const TiandituMap = forwardRef((props, ref) => {
-    console.log('props--->',props, props.onScale(), ref);
-    
+    console.log('props--->', props, props.onScale(), ref);
+
     // 实际初始化地图的函数
     const initMapInstance = () => {
         window.map = new window.T.Map('map-container', {
@@ -59,7 +59,6 @@ const TiandituMap = forwardRef((props, ref) => {
             }
         };
     }, []);
-
     return <div id="map-container" style={{ width: '100%', height: '100%' }} />;
 });
 

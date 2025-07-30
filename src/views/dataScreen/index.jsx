@@ -6,8 +6,10 @@ import { useRef, useLayoutEffect } from 'react'
 import RealTimeAccessChart from "./components/RealTimeAccessChart";
 import MaleFemaleRatioChart from "./components/MaleFemaleRatioChart";
 import AgeRatioChart from "./components/AgeRatioChart";
+import { useNavigate } from 'react-router-dom';
 // import ChinaMapChart from "./components/ChinaMapChart";
 const DataScreen = () => {
+  const navigate = useNavigate()
   const dataScreenRef = useRef(null)
   /* 浏览器监听 resize 事件 */
   const resize = () => {
@@ -21,6 +23,10 @@ const DataScreen = () => {
     let ww = window.innerWidth / width;
     let wh = window.innerHeight / height;
     return ww < wh ? ww : wh;
+  };
+
+  const goHome = () => {
+    navigate('/home/index')
   };
 
   useLayoutEffect(() => {
@@ -41,7 +47,7 @@ const DataScreen = () => {
       <TiandituMap a={1} onScale={getScale} />
       <div className="dataScreen-header">
         <div className="header-lf">
-          <span className="header-screening">
+          <span className="header-screening" onClick={goHome}>
             首页
           </span>
         </div>
